@@ -7,6 +7,22 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Canvas>
+            <ComboBox x:Name="combo" ItemsSource="{Binding collectionOfMessage}" 
+                      Canvas.Left="70" Canvas.Top="81" Width="652" Height="65"/>
+            
+            <Button Content="MESSAGE BOX" Height="78" Width="652"
+                    Command="{Binding MessageCommand}" 
+                    CommandParameter="{Binding ElementName=combo,Path=SelectedItem}"
+                    Canvas.Left="70" Canvas.Top="166"/>
+            
+            <Button Content="CONSOLE BOX" 
+                    Height="78" Width="652"
+                    Command="{Binding ConsoleCommand}" 
+                    CommandParameter="{Binding ElementName=combo,Path=SelectedItem}" 
+                    Canvas.Left="70" Canvas.Top="263"/>
+        </Canvas>
+
+
     </Grid>
 </Window>

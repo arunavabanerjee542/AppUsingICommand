@@ -23,6 +23,8 @@ namespace AppUsingICommand
         public MainWindow()
         {
             InitializeComponent();
+
+            DataContext = new ViewModel();
         }
     }
 }
